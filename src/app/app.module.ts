@@ -1,3 +1,5 @@
+import { MatIconModule } from '@angular/material/icon'
+import { MatButtonModule } from '@angular/material/button'
 import { DokoGameState } from './state/doko-game.state'
 import { NavigationFrameComponent } from './site/navigation-frame/navigation-frame.component'
 import { SiteModule } from './site/site.module'
@@ -34,6 +36,8 @@ import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin'
     }),
     BrowserAnimationsModule,
     SiteModule,
+    MatButtonModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

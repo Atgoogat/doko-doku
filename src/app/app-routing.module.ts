@@ -3,7 +3,12 @@ import { NavigationFrameComponent } from './site/navigation-frame/navigation-fra
 import { NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
 
-const routes: Routes = []
+const routes: Routes = [
+  {
+    path: 'doko',
+    loadChildren: () => import('./doko/doko.module').then((m) => m.DokoModule),
+  },
+]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

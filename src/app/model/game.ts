@@ -17,3 +17,7 @@ export interface GameEntryPlayerPoints extends Identifiable {
   readonly playerId: number
   readonly points: number
 }
+
+export interface NewGame {
+  playerNames: string[]
+}

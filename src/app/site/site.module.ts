@@ -9,9 +9,14 @@ import { MatSidenavModule } from '@angular/material/sidenav'
 import { MatIconModule } from '@angular/material/icon'
 import { MatListModule } from '@angular/material/list'
 import { GlobalFabDirective } from './directives/global-fab.directive'
+import { SafeFrameComponent } from './safe-frame/safe-frame.component'
 
 @NgModule({
-  declarations: [NavigationFrameComponent, GlobalFabDirective],
+  declarations: [
+    NavigationFrameComponent,
+    GlobalFabDirective,
+    SafeFrameComponent,
+  ],
   imports: [
     CommonModule,
     LayoutModule,
@@ -22,6 +27,6 @@ import { GlobalFabDirective } from './directives/global-fab.directive'
     MatListModule,
     RouterModule.forChild([]),
   ],
-  exports: [NavigationFrameComponent, GlobalFabDirective],
+  exports: [NavigationFrameComponent, GlobalFabDirective, SafeFrameComponent],
 })
 export class SiteModule {}

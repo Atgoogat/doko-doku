@@ -1,0 +1,27 @@
+<app-safe-frame>
+  <form [formGroup]="formGroup" (ngSubmit)="createGame()">
+    <ng-container formArrayName="playerNames">
+      <div
+        class="row"
+        *ngFor="let _ of formGroup.controls['playerNames'].controls; index as i"
+      >
+        <mat-form-field>
+          <mat-label>Spieler #{{ i + 1 }}</mat-label>
+          <input
+            matInput
+            placeholder="Spieler #{{ i + 1 }}"
+            [formControlName]="i"
+          />
+        </mat-form-field>
+        <button mat-icon-button *ngIf="i >= 4" (click)="removePlayerAt(i)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+    </ng-container>
+    <button mat-button (click)="addPlayer()">Weiterer Spieler</button>
+
+    <button type="submit" mat-fab appGlobalFab [disabled]="formGroup.invalid">
+      <mat-icon>save</mat-icon>
+    </button>
+  </form>
+</app-safe-frame>
