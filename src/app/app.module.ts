@@ -1,3 +1,4 @@
+import { DokoGameState } from './state/doko-game.state'
 import { NavigationFrameComponent } from './site/navigation-frame/navigation-frame.component'
 import { SiteModule } from './site/site.module'
 import { NgModule } from '@angular/core'
@@ -23,8 +24,10 @@ import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin'
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000',
     }),
-    NgxsModule.forRoot([]),
-    NgxsStoragePluginModule.forRoot(),
+    NgxsModule.forRoot([DokoGameState]),
+    NgxsStoragePluginModule.forRoot({
+      key: [DokoGameState],
+    }),
     NgxsReduxDevtoolsPluginModule.forRoot({
       maxAge: 25,
       disabled: environment.production,
