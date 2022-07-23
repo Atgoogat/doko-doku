@@ -8,9 +8,10 @@ import { MatButtonModule } from '@angular/material/button'
 import { MatSidenavModule } from '@angular/material/sidenav'
 import { MatIconModule } from '@angular/material/icon'
 import { MatListModule } from '@angular/material/list'
+import { GlobalFabDirective } from './directives/global-fab.directive'
 
 @NgModule({
-  declarations: [NavigationFrameComponent],
+  declarations: [NavigationFrameComponent, GlobalFabDirective],
   imports: [
     CommonModule,
     LayoutModule,
@@ -21,6 +22,6 @@ import { MatListModule } from '@angular/material/list'
     MatListModule,
     RouterModule.forChild([]),
   ],
-  exports: [NavigationFrameComponent],
+  exports: [NavigationFrameComponent, GlobalFabDirective],
 })
 export class SiteModule {}
