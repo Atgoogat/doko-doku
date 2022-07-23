@@ -1,3 +1,5 @@
+import { NavigationFrameComponent } from './site/navigation-frame/navigation-frame.component'
+import { SiteModule } from './site/site.module'
 import { NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
 
@@ -28,6 +30,7 @@ import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin'
       disabled: environment.production,
     }),
     BrowserAnimationsModule,
+    SiteModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
