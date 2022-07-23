@@ -1,3 +1,4 @@
+import { ID_STORAGE } from './app.constants'
 import { MatIconModule } from '@angular/material/icon'
 import { MatButtonModule } from '@angular/material/button'
 import { DokoGameState } from './state/doko-game.state'
@@ -39,7 +40,12 @@ import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin'
     MatButtonModule,
     MatIconModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: ID_STORAGE,
+      useValue: localStorage,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

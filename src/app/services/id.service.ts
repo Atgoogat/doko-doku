@@ -1,24 +1,32 @@
-import { Injectable } from '@angular/core'
+import { ID_STORAGE } from './../app.constants'
+import { Inject, Injectable } from '@angular/core'
 
 @Injectable({
   providedIn: 'root',
 })
 export class IdService {
-  constructor() {
-    if (localStorage.getItem('id') === null) {
-      localStorage.setItem('id', '0')
+  private id!: number
+
+  constructor(@Inject(ID_STORAGE) private readonly storage: Storage) {
+    const valueString = storage.getItem('id')
+    if (valueString === null) {
+      storage.setItem('id', '0')
+      this.id = 0
+    } else {
+      const value = parseInt(valueString)
+      if (value === NaN) {
+        throw new Error(
+          'expected an integer but got ' + value + ' from storage'
+        )
+      }
+      this.id = value
     }
   }
 
   getUniqueId(): number {
-    const id = localStorage.getItem('id')
-    if (id === null) {
-      throw new Error('localStorage was expected to hold an id')
-    }
-    const numericId = parseInt(id)
-    if (numericId === NaN) {
-      throw new Error('expected an int but got "' + numericId + '"')
-    }
-    return numericId
+    const newId = this.id
+    this.id += 1
+    this.storage.setItem('id', `${this.id}`)
+    return newId
   }
 }
