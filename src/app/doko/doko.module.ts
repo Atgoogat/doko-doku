@@ -10,9 +10,10 @@ import { NewGameComponent } from './new-game/new-game.component'
 import { MatButtonModule } from '@angular/material/button'
 import { MatTableModule } from '@angular/material/table'
 import { GameTableComponent } from './game-table/game-table.component'
+import { NewGameEntryComponent } from './new-game-entry/new-game-entry.component'
 
 @NgModule({
-  declarations: [NewGameComponent, GameTableComponent],
+  declarations: [NewGameComponent, GameTableComponent, NewGameEntryComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,

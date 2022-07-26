@@ -13,6 +13,7 @@ export class GameTableComponent implements OnInit {
       ...['Franka', 'Luis', 'Onno', 'Jana'].map((name, id) => ({
         id,
         name,
+        startNumber: id,
       })),
     ],
     createdOn: new Date(),

@@ -21,3 +21,9 @@ export interface GameEntryPlayerPoints extends Identifiable {
 export interface NewGame {
   playerNames: string[]
 }
+
+export interface NewGameEntry {
+  isBockRound: boolean
+  points: number
+  winnerPlayerIds: number[]
+}
