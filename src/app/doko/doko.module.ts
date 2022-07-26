@@ -7,10 +7,12 @@ import { NgModule } from '@angular/core'
 import { ReactiveFormsModule } from '@angular/forms'
 import { DokoRoutingModule } from './doko-routing.module'
 import { NewGameComponent } from './new-game/new-game.component'
-import { MatButton, MatButtonModule } from '@angular/material/button'
+import { MatButtonModule } from '@angular/material/button'
+import { MatTableModule } from '@angular/material/table'
+import { GameTableComponent } from './game-table/game-table.component'
 
 @NgModule({
-  declarations: [NewGameComponent],
+  declarations: [NewGameComponent, GameTableComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,
@@ -20,6 +22,7 @@ import { MatButton, MatButtonModule } from '@angular/material/button'
     MatIconModule,
     MatFormFieldModule,
     MatInputModule,
+    MatTableModule,
   ],
 })
 export class DokoModule {}
