@@ -2,7 +2,7 @@ import { GameService } from './../services/game.service'
 import { AddNewGame } from './doko-game.actions'
 import { Game } from './../model/game'
 import { Injectable } from '@angular/core'
-import { Action, State, StateContext } from '@ngxs/store'
+import { Action, Selector, State, StateContext } from '@ngxs/store'
 
 export interface DokoGameStateModel {
   games: Game[]
@@ -19,6 +19,11 @@ const defaultModel: DokoGameStateModel = {
 @Injectable()
 export class DokoGameState {
   constructor(private readonly gameService: GameService) {}
+
+  @Selector()
+  static games({ games }: DokoGameStateModel) {
+    return games
+  }
 
   @Action(AddNewGame)
   addNewGame(ctx: StateContext<DokoGameStateModel>, action: AddNewGame) {

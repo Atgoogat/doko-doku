@@ -1,0 +1,7 @@
+<mat-card>
+  <mat-card-subtitle>
+    {{ game.createdOn | date: "dd MMM yyyy HH:mm" }}
+  </mat-card-subtitle>
+  <mat-card-title> {{ playerNames }} </mat-card-title>
+  <mat-card-content> {{ game.players.length }} Spieler </mat-card-content>
+</mat-card>

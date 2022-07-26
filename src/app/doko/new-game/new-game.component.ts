@@ -1,12 +1,8 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core'
-import {
-  FormArray,
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  NonNullableFormBuilder,
-  Validators,
-} from '@angular/forms'
+import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms'
+import { Store } from '@ngxs/store'
+import { NewGame } from './../../model/game'
+import { AddNewGame } from './../../state/doko-game.actions'
 
 @Component({
   selector: 'app-new-game',
@@ -23,7 +19,10 @@ export class NewGameComponent implements OnInit {
     ]),
   })
 
-  constructor(private readonly changeRef: ChangeDetectorRef) {}
+  constructor(
+    private readonly changeRef: ChangeDetectorRef,
+    private readonly store: Store
+  ) {}
 
   ngOnInit(): void {}
 
@@ -39,7 +38,8 @@ export class NewGameComponent implements OnInit {
 
   createGame() {
     if (this.formGroup.valid) {
-      console.log(this.formGroup.getRawValue())
+      const newGame: NewGame = this.formGroup.getRawValue()
+      this.store.dispatch(new AddNewGame(newGame))
     }
   }
 

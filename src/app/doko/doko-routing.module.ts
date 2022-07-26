@@ -1,3 +1,4 @@
+import { GameListComponent } from './game-list/game-list.component'
 import { GameTableComponent } from './game-table/game-table.component'
 import { NewGameComponent } from './new-game/new-game.component'
 import { Routes, RouterModule } from '@angular/router'
@@ -10,7 +11,16 @@ const routes: Routes = [
   },
   {
     path: 'game',
-    component: GameTableComponent,
+    children: [
+      {
+        path: '',
+        component: GameListComponent,
+      },
+      {
+        path: ':id',
+        component: GameTableComponent,
+      },
+    ],
   },
 ]
 

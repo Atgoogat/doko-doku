@@ -10,12 +10,14 @@ import { MatIconModule } from '@angular/material/icon'
 import { MatListModule } from '@angular/material/list'
 import { GlobalFabDirective } from './directives/global-fab.directive'
 import { SafeFrameComponent } from './safe-frame/safe-frame.component'
+import { SortByPipe } from './pipes/sort-by.pipe'
 
 @NgModule({
   declarations: [
     NavigationFrameComponent,
     GlobalFabDirective,
     SafeFrameComponent,
+    SortByPipe,
   ],
   imports: [
     CommonModule,
@@ -27,6 +29,11 @@ import { SafeFrameComponent } from './safe-frame/safe-frame.component'
     MatListModule,
     RouterModule.forChild([]),
   ],
-  exports: [NavigationFrameComponent, GlobalFabDirective, SafeFrameComponent],
+  exports: [
+    NavigationFrameComponent,
+    GlobalFabDirective,
+    SafeFrameComponent,
+    SortByPipe,
+  ],
 })
 export class SiteModule {}

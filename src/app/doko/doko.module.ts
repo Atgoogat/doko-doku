@@ -1,3 +1,4 @@
+import { MatListModule } from '@angular/material/list'
 import { MatIconModule } from '@angular/material/icon'
 import { MatInputModule } from '@angular/material/input'
 import { MatFormFieldModule } from '@angular/material/form-field'
@@ -9,11 +10,20 @@ import { DokoRoutingModule } from './doko-routing.module'
 import { NewGameComponent } from './new-game/new-game.component'
 import { MatButtonModule } from '@angular/material/button'
 import { MatTableModule } from '@angular/material/table'
+import { MatCardModule } from '@angular/material/card'
 import { GameTableComponent } from './game-table/game-table.component'
 import { NewGameEntryComponent } from './new-game-entry/new-game-entry.component'
+import { GameListComponent } from './game-list/game-list.component'
+import { GameCardComponent } from './game-list/game-card/game-card.component'
 
 @NgModule({
-  declarations: [NewGameComponent, GameTableComponent, NewGameEntryComponent],
+  declarations: [
+    NewGameComponent,
+    GameTableComponent,
+    NewGameEntryComponent,
+    GameListComponent,
+    GameCardComponent,
+  ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
@@ -24,6 +34,8 @@ import { NewGameEntryComponent } from './new-game-entry/new-game-entry.component
     MatFormFieldModule,
     MatInputModule,
     MatTableModule,
+    MatListModule,
+    MatCardModule,
   ],
 })
 export class DokoModule {}

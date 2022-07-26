@@ -20,7 +20,7 @@ export class GameService {
 
     return {
       id: this.idService.getUniqueId(),
-      createdOn: new Date().toDateString(),
+      createdOn: new Date().toISOString(),
       players,
     }
   }

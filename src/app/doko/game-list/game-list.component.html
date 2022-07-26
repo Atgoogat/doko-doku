@@ -1,0 +1,5 @@
+<app-game-card
+  *ngFor="let game of games$ | async | sortBy: 'createdOn'"
+  [game]="game"
+>
+</app-game-card>
