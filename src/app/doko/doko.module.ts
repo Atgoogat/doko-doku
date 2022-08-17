@@ -9,8 +9,9 @@ import { ReactiveFormsModule } from '@angular/forms'
 import { DokoRoutingModule } from './doko-routing.module'
 import { NewGameComponent } from './new-game/new-game.component'
 import { MatButtonModule } from '@angular/material/button'
-import { MatTableModule } from '@angular/material/table'
 import { MatCardModule } from '@angular/material/card'
+import { MatTableModule } from '@angular/material/table'
+import { MatChipsModule } from '@angular/material/chips'
 import { GameTableComponent } from './game-table/game-table.component'
 import { NewGameEntryComponent } from './new-game-entry/new-game-entry.component'
 import { GameListComponent } from './game-list/game-list.component'
@@ -38,6 +39,7 @@ import { NotFoundComponent } from './not-found/not-found.component'
     MatTableModule,
     MatListModule,
     MatCardModule,
+    MatChipsModule,
   ],
 })
 export class DokoModule {}

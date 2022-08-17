@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core'
 import { Player } from '../model/player'
 
-interface PlayerDivision {
+export interface PlayerDivision {
   takePart: Player[]
   skipped: Player[]
 }
@@ -20,7 +20,7 @@ export class PlayerService {
     return this.dividePlayers(players, round).skipped
   }
 
-  private dividePlayers(players: Player[], round: number): PlayerDivision {
+  dividePlayers(players: Player[], round: number): PlayerDivision {
     const playerCount = players.length
     if (playerCount === 4) {
       return {
@@ -30,7 +30,7 @@ export class PlayerService {
     }
     const stride = playerCount / (playerCount - 4)
     let skipped: Player[] = []
-    for (let i = players.length - 1; i >= 0; i -= stride) {
+    for (let i = playerCount - 1; i >= 0; i -= stride) {
       skipped.push(players[(i + round - 1) % players.length])
     }
     return {

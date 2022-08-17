@@ -15,6 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { NgxsStoragePluginModule } from '@ngxs/storage-plugin'
 import { NgxsModule } from '@ngxs/store'
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin'
+import { DokoGameEntryState } from './state/doko-game-entry.state'
 
 @NgModule({
   declarations: [AppComponent],
@@ -27,9 +28,9 @@ import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin'
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000',
     }),
-    NgxsModule.forRoot([DokoGameState]),
+    NgxsModule.forRoot([DokoGameState, DokoGameEntryState]),
     NgxsStoragePluginModule.forRoot({
-      key: [DokoGameState],
+      key: [DokoGameState, DokoGameEntryState],
     }),
     NgxsReduxDevtoolsPluginModule.forRoot({
       maxAge: 25,

@@ -23,7 +23,9 @@ export interface NewGame {
 }
 
 export interface NewGameEntry {
+  gameId: number
   isBockRound: boolean
-  points: number
+  pointsPerWinner: number
   winnerPlayerIds: number[]
+  loserPlayerIds: number[]
 }
