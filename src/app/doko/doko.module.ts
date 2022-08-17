@@ -15,6 +15,7 @@ import { GameTableComponent } from './game-table/game-table.component'
 import { NewGameEntryComponent } from './new-game-entry/new-game-entry.component'
 import { GameListComponent } from './game-list/game-list.component'
 import { GameCardComponent } from './game-list/game-card/game-card.component'
+import { NotFoundComponent } from './not-found/not-found.component'
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { GameCardComponent } from './game-list/game-card/game-card.component'
     NewGameEntryComponent,
     GameListComponent,
     GameCardComponent,
+    NotFoundComponent,
   ],
   imports: [
     CommonModule,
